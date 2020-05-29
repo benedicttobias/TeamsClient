@@ -1,8 +1,0 @@
-C:\Users\bento\source\repos\TeamsWebhook\RandomGenerator\bin\Debug\RandomGenerator.dll
-C:\Users\bento\source\repos\TeamsWebhook\RandomGenerator\bin\Debug\RandomGenerator.pdb
-C:\Users\bento\source\repos\TeamsWebhook\RandomGenerator\bin\Debug\RestSharp.dll
-C:\Users\bento\source\repos\TeamsWebhook\RandomGenerator\obj\Debug\RandomGenerator.csprojAssemblyReference.cache
-C:\Users\bento\source\repos\TeamsWebhook\RandomGenerator\obj\Debug\RandomGenerator.csproj.CoreCompileInputs.cache
-C:\Users\bento\source\repos\TeamsWebhook\RandomGenerator\obj\Debug\RandomGenerator.csproj.CopyComplete
-C:\Users\bento\source\repos\TeamsWebhook\RandomGenerator\obj\Debug\RandomGenerator.dll
-C:\Users\bento\source\repos\TeamsWebhook\RandomGenerator\obj\Debug\RandomGenerator.pdb
