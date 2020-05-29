@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "dxX1ljMLR0UAAexT9eSMeCR5Odiq5Hxlr4VfbaHFAlqGFgFnC9OGYrNxAvv9jTZL+iHVWLNhGYDiPPOvfVPdRg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\bento\\source\\repos\\TeamsWebhook\\RandomGenerator\\RandomGenerator.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\bento\\.nuget\\packages\\restsharp\\106.11.4\\restsharp.106.11.4.nupkg.sha512"
+  ],
+  "logs": []
+}

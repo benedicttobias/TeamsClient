@@ -1,0 +1,14 @@
+C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\bin\Debug\TeamsWebhook.exe.config
+C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\bin\Debug\TeamsWebhook.exe
+C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\bin\Debug\TeamsWebhook.pdb
+C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\bin\Debug\Bots.dll
+C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\bin\Debug\Newtonsoft.Json.dll
+C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\bin\Debug\Bots.pdb
+C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\obj\Debug\TeamsWebhook.csprojAssemblyReference.cache
+C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\obj\Debug\TeamsWebhook.csproj.CoreCompileInputs.cache
+C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\obj\Debug\TeamsWebhook.csproj.CopyComplete
+C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\obj\Debug\TeamsWebhook.exe
+C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\obj\Debug\TeamsWebhook.pdb
+C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\bin\Debug\RandomGenerator.dll
+C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\bin\Debug\RestSharp.dll
+C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\bin\Debug\RandomGenerator.pdb

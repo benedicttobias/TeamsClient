@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "TK3Sztr8k2euuK7bVVHQxi9s/6kwQbpwM8+F5mTbzcjsvLJdoyc3yuzjGAUrsJgEU88RJPwFIQcSu55W1Z5u4Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\bento\\source\\repos\\TeamsWebhook\\Bots\\Bots.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\bento\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

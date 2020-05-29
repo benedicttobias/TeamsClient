@@ -1,0 +1,8 @@
+C:\Users\bento\source\repos\TeamsWebhook\Bots\bin\Debug\Bots.dll
+C:\Users\bento\source\repos\TeamsWebhook\Bots\bin\Debug\Bots.pdb
+C:\Users\bento\source\repos\TeamsWebhook\Bots\bin\Debug\Newtonsoft.Json.dll
+C:\Users\bento\source\repos\TeamsWebhook\Bots\obj\Debug\Bots.csprojAssemblyReference.cache
+C:\Users\bento\source\repos\TeamsWebhook\Bots\obj\Debug\Bots.csproj.CoreCompileInputs.cache
+C:\Users\bento\source\repos\TeamsWebhook\Bots\obj\Debug\Bots.csproj.CopyComplete
+C:\Users\bento\source\repos\TeamsWebhook\Bots\obj\Debug\Bots.dll
+C:\Users\bento\source\repos\TeamsWebhook\Bots\obj\Debug\Bots.pdb
