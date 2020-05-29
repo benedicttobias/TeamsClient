@@ -6,3 +6,4 @@ C:\Users\bento\source\repos\TeamsWebhook\Bots\obj\Debug\Bots.csproj.CoreCompileI
 C:\Users\bento\source\repos\TeamsWebhook\Bots\obj\Debug\Bots.csproj.CopyComplete
 C:\Users\bento\source\repos\TeamsWebhook\Bots\obj\Debug\Bots.dll
 C:\Users\bento\source\repos\TeamsWebhook\Bots\obj\Debug\Bots.pdb
+C:\Users\bento\source\repos\TeamsWebhook\Bots\bin\Debug\RestSharp.dll

@@ -23,7 +23,7 @@ namespace TeamsWebhook
                     new Section
                     {
                         ActivityText = randomGenerator,
-                        ActivityImage = "https://picsum.photos/200",
+                        ActivityImage = $"https://picsum.photos/200",
                     }
                 },
                 PotentialAction = new List<Potentialaction>
@@ -40,11 +40,9 @@ namespace TeamsWebhook
                 }
             };
 
-            var response = teamsWebhook.SendAsync(content).ContinueWith(responseTask => {
-                var result = responseTask.Result;
-            });
-
-            response.Wait();
+            var response = teamsWebhook.Send(content);
+            Console.WriteLine(response);
+            Console.ReadLine();
         }
     }
 }

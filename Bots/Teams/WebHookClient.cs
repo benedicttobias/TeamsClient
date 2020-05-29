@@ -1,26 +1,25 @@
-﻿using System;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Net;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using RestSharp;
 
 namespace Bots.Teams
 {
     public class WebHookClient
     {
-        private readonly HttpClient _httpClient;
+        private readonly RestClient _restClient;
         private readonly string _serviceUrl;
-        private readonly string _mediaType;
         private readonly DefaultContractResolver _defaultContractResolver;
 
         public WebHookClient(string serviceUrl, string mediaType)
         {
-            _mediaType = mediaType;
             _serviceUrl = serviceUrl;
-            _httpClient = new HttpClient();
-            _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(mediaType));
+            _restClient = new RestClient(_serviceUrl);
+            _restClient.AddDefaultHeaders(new Dictionary<string, string>
+            {
+                {"contentType", mediaType} 
+            });
 
             _defaultContractResolver = new DefaultContractResolver
             {
@@ -28,7 +27,7 @@ namespace Bots.Teams
             };
         }
 
-        public async Task<HttpResponseMessage> PostAsync(object payload)
+        public HttpStatusCode Post(object payload)
         {
             var payloadJson = JsonConvert.SerializeObject(payload, new JsonSerializerSettings
             {
@@ -36,9 +35,10 @@ namespace Bots.Teams
                 Formatting = Formatting.Indented
             });
 
-            var stringContent = new StringContent(payloadJson, Encoding.UTF8, _mediaType);
+            var request = new RestRequest(Method.POST);
+            request.AddJsonBody(payloadJson);
 
-            return await _httpClient.PostAsync(_serviceUrl, stringContent);
+            return _restClient.Execute(request).StatusCode;
         }
     }
 }

@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "TK3Sztr8k2euuK7bVVHQxi9s/6kwQbpwM8+F5mTbzcjsvLJdoyc3yuzjGAUrsJgEU88RJPwFIQcSu55W1Z5u4Q==",
+  "dgSpecHash": "0ejgOs+PCG0/KApwet5BfGwTxMzUjcma/0lAKtQD1ht2qZ0nw0zL60gk02RUjnrnr2ztOrd2lSHgm7AeZzUhZQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\bento\\source\\repos\\TeamsWebhook\\Bots\\Bots.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\bento\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+    "C:\\Users\\bento\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\bento\\.nuget\\packages\\restsharp\\106.11.4\\restsharp.106.11.4.nupkg.sha512"
   ],
   "logs": []
 }

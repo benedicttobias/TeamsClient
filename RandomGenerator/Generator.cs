@@ -5,7 +5,7 @@ namespace RandomGenerator
     public class Generator
     {
         private readonly RestClient _restClient;
-        private string _baseUrl;
+        private readonly string _baseUrl;
 
         public Generator(string baseUrl)
         {
