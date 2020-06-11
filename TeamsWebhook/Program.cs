@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 using Bots.Models;
@@ -10,7 +10,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using Exception = System.Exception;
+using UltimateTemperatureLibrary;
+
 
 namespace TeamsWebhook
 {
@@ -68,34 +69,49 @@ namespace TeamsWebhook
 
                 var randomGenerator = await new RandomGenerator.Generator(httpClientFactory).GetRandomParagraph(3);
 
+                var sections = new List<Section>();
+                sections.Add(new Section
+                {
+                    ActivityText = randomGenerator,
+                    ActivityImage = $"https://picsum.photos/200",
+                });
+
+                if (forecast.Consolidated_weather.Any())
+                {
+                    foreach (var weather in forecast.Consolidated_weather)
+                    {
+                        var maxTemp = new Celsius(weather.max_temp);
+                        var minTemp = new Celsius(weather.min_temp);
+
+                        sections.Add(new Section
+                        {
+                            ActivityText = $"Day: {weather.applicable_date} - Max: {maxTemp.ToFahrenheit().ToString("F0")} - Min: {minTemp.ToFahrenheit().ToString("F0")}"
+                        });
+                    }
+                }
+                
+
                 var content = new CardConnector
                 {
                     Title = "You have a new notification!",
                     Summary = "Subtitle",
-                    Sections = new[]
-                    {
-                    new Section
-                    {
-                        ActivityText = randomGenerator,
-                        ActivityImage = $"https://picsum.photos/200",
-                    }
-                },
+                    Sections = sections,
                     PotentialAction = new List<Potentialaction>
-                {
-                    new Potentialaction
                     {
-                        Type = "ViewAction",
-                        Name = "View image source",
-                        Target = new List<string>
+                        new Potentialaction
                         {
-                            "https://picsum.photos/"
+                            Type = "ViewAction",
+                            Name = "View image source",
+                            Target = new List<string>
+                            {
+                                "https://picsum.photos/"
+                            }
                         }
                     }
-                }
                 };
 
-                var response = teamsWebhook.Send(content);
-                Console.WriteLine(response);
+                var teamsResponse = teamsWebhook.Send(content);
+                logger.LogInformation($"Teams response: {teamsResponse}");
             }
 
 

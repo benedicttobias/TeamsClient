@@ -9,7 +9,6 @@ namespace Bots.Teams
 {
     public class TeamsWebhook
     {
-        private readonly string _serviceUrl;
         private readonly HttpClient _httpClient;
         private readonly DefaultContractResolver _defaultContractResolver;
 

@@ -29,7 +29,6 @@ C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\bin\Debug\Microsoft.Extens
 C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\bin\Debug\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\bin\Debug\Microsoft.Extensions.Primitives.dll
 C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\bin\Debug\Newtonsoft.Json.dll
-C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\bin\Debug\RestSharp.dll
 C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\bin\Debug\System.Buffers.dll
 C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\bin\Debug\System.ComponentModel.Annotations.dll
 C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\bin\Debug\System.Diagnostics.EventLog.dll
@@ -52,3 +51,5 @@ C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\obj\Debug\TeamsWebhook.csp
 C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\obj\Debug\TeamsWebhook.csproj.CopyComplete
 C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\obj\Debug\TeamsWebhook.exe
 C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\obj\Debug\TeamsWebhook.pdb
+C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\bin\Debug\UltimateTemperatureLibrary.dll
