@@ -47,6 +47,7 @@
     <Compile Include="Models\Picture.cs" />
     <Compile Include="Models\PotentialAction.cs" />
     <Compile Include="Models\Section.cs" />
+    <Compile Include="Models\Weather\WeatherForecastModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Teams\TeamsWebhook.cs" />
     <Compile Include="Teams\WebHookClient.cs" />
@@ -58,6 +59,10 @@
     <PackageReference Include="RestSharp">
       <Version>106.11.4</Version>
     </PackageReference>
+    <PackageReference Include="System.Net.Http.Json">
+      <Version>3.2.1</Version>
+    </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

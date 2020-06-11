@@ -32,6 +32,7 @@ crispy-octo-engine/.gitignore
 
 # User-specific files
 *.suo
+.vs/TeamsWebhook/v16/.suo
 *.user
 *.userosscache
 *.sln.docstates
