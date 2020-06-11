@@ -1,22 +1,21 @@
-﻿using RestSharp;
+﻿using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace RandomGenerator
 {
     public class Generator
     {
-        private readonly RestClient _restClient;
-        private readonly string _baseUrl;
+        private readonly HttpClient _httpClient;
 
-        public Generator(string baseUrl)
+        public Generator(IHttpClientFactory httpClientFactory)
         {
-            _baseUrl = baseUrl;
-            _restClient = new RestClient(_baseUrl);
+            _httpClient = httpClientFactory.CreateClient("randomGenerator");
         }
 
-        public string GetRandomParagraph(int paragraphCount)
+        public async Task<string> GetRandomParagraph(int paragraphCount)
         {
-            var request = new RestRequest($"/{paragraphCount}/short");
-            return _restClient.Get(request).Content;
+            
+            return await _httpClient.GetStringAsync($"{paragraphCount}/short");
         }
     }
 }

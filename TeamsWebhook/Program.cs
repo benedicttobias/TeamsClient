@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
-using System.Web.UI.WebControls;
 using Bots.Models;
 using Bots.Models.Weather;
 using Microsoft.Extensions.DependencyInjection;
@@ -26,6 +26,10 @@ namespace TeamsWebhook
                     {
                         c.BaseAddress = new Uri("https://www.metaweather.com/api/");
                     });
+                    services.AddHttpClient("randomGenerator", c =>
+                    {
+                        c.BaseAddress = new Uri("https://loripsum.net/api/");
+                    });
                 })
                 .ConfigureLogging(logging =>
                 {
@@ -42,8 +46,8 @@ namespace TeamsWebhook
 
                 logger.LogError("Log error test");
 
-                var _httpClientFactory = services.GetRequiredService<IHttpClientFactory>();
-                var client = _httpClientFactory.CreateClient("meta");
+                var httpClientFactory = services.GetRequiredService<IHttpClientFactory>();
+                var client = httpClientFactory.CreateClient("meta");
 
                 try
                 {
@@ -57,44 +61,45 @@ namespace TeamsWebhook
                     logger.LogError(e, "Error on getting the API data.");
                     throw;
                 }
+
+                var serviceUrl = Environment.GetEnvironmentVariable("serviceUrl", EnvironmentVariableTarget.User);
+
+                var teamsWebhook = new Bots.Teams.TeamsWebhook(serviceUrl);
+
+                var randomGenerator = await new RandomGenerator.Generator(httpClientFactory).GetRandomParagraph(3);
+
+                var content = new CardConnector
+                {
+                    Title = "You have a new notification!",
+                    Summary = "Subtitle",
+                    Sections = new[]
+                    {
+                    new Section
+                    {
+                        ActivityText = randomGenerator,
+                        ActivityImage = $"https://picsum.photos/200",
+                    }
+                },
+                    PotentialAction = new List<Potentialaction>
+                {
+                    new Potentialaction
+                    {
+                        Type = "ViewAction",
+                        Name = "View image source",
+                        Target = new List<string>
+                        {
+                            "https://picsum.photos/"
+                        }
+                    }
+                }
+                };
+
+                var response = teamsWebhook.Send(content);
+                Console.WriteLine(response);
             }
 
-            //var serviceUrl = Environment.GetEnvironmentVariable("serviceUrl", EnvironmentVariableTarget.User);
 
-            //var teamsWebhook = new Bots.Teams.TeamsWebhook(serviceUrl);
-
-            //var randomGenerator = new RandomGenerator.Generator("https://loripsum.net/api").GetRandomParagraph(3);
-
-            //var content = new CardConnector
-            //{
-            //    Title = "You have a new notification!",
-            //    Summary = "Subtitle",
-            //    Sections = new[]
-            //    {
-            //        new Section
-            //        {
-            //            ActivityText = randomGenerator,
-            //            ActivityImage = $"https://picsum.photos/200",
-            //        }
-            //    },
-            //    PotentialAction = new List<Potentialaction>
-            //    {
-            //        new Potentialaction
-            //        {
-            //            Type = "ViewAction",
-            //            Name = "View image source",
-            //            Target = new List<string>
-            //            {
-            //                "https://picsum.photos/"
-            //            }
-            //        }
-            //    }
-            //};
-
-            //var response = teamsWebhook.Send(content);
-            //Console.WriteLine(response);
             Console.ReadLine();
-
             return 0;
         }
     }
