@@ -22,7 +22,10 @@ namespace TeamsWebhook
                 .ConfigureServices((hostContext, services) =>
                 {
                     services.AddHttpClient();
-                    
+                    services.AddHttpClient("meta", c =>
+                    {
+                        c.BaseAddress = new Uri("https://www.metaweather.com/api/");
+                    });
                 })
                 .ConfigureLogging(logging =>
                 {
@@ -40,11 +43,11 @@ namespace TeamsWebhook
                 logger.LogError("Log error test");
 
                 var _httpClientFactory = services.GetRequiredService<IHttpClientFactory>();
-                var client = _httpClientFactory.CreateClient();
+                var client = _httpClientFactory.CreateClient("meta");
 
                 try
                 {
-                    var forecast = await client.GetFromJsonAsync<WeatherForecastModel>("https://www.metaweather.com/api/location/2357024/");
+                    var forecast = await client.GetFromJsonAsync<WeatherForecastModel>("location/2357024/");
                     var jsonResponse = JsonConvert.SerializeObject(forecast);
 
                     logger.LogInformation($"Response: {jsonResponse}");
