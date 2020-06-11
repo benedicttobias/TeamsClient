@@ -49,6 +49,10 @@
       <Project>{79960578-AEFF-4CF1-9601-919253CC5F61}</Project>
       <Name>Bots</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{01A1ECAE-1263-431E-BA93-BFEF6291C506}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RandomGenerator\RandomGenerator.csproj">
       <Project>{7496fe85-fce2-4289-ac3c-bd6322286717}</Project>
       <Name>RandomGenerator</Name>

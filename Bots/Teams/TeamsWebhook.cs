@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Bots.Models;
+using Model;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 

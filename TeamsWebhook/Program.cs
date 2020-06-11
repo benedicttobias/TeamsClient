@@ -2,14 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
-using System.Net.Http.Json;
 using System.Threading.Tasks;
-using Bots.Models;
-using Bots.Models.Weather;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
+using Model.Teams;
 using UltimateTemperatureLibrary;
 using Weather;
 
@@ -79,7 +76,7 @@ namespace TeamsWebhook
 
                         sections.Add(new Section
                         {
-                            ActivityText = $"Day: {weather.applicable_date} - Max: {maxTemp.ToFahrenheit().ToString("F0")} - Min: {minTemp.ToFahrenheit().ToString("F0")}"
+                            ActivityText = $"Date: {weather.applicable_date} - Max: {maxTemp.ToFahrenheit().ToString("F0")} - Min: {minTemp.ToFahrenheit().ToString("F0")}"
                         });
                     }
                 }
@@ -107,6 +104,7 @@ namespace TeamsWebhook
                 logger.LogInformation($"Teams response: {teamsResponse}");
             }
 
+            Console.ReadLine();
             return 0;
         }
     }

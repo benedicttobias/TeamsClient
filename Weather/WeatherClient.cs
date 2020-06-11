@@ -1,7 +1,7 @@
-﻿using Bots.Models.Weather;
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
+using Model.Weather;
 
 namespace Weather
 {

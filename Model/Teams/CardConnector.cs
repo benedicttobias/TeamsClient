@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Bots.Models
+namespace Model.Teams
 {
     public class CardConnector : IWebhookMessage
     {

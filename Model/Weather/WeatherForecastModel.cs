@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Bots.Models.Weather
+namespace Model.Weather
 {
     public class WeatherForecastModel
     {

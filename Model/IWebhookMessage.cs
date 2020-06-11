@@ -1,4 +1,4 @@
-﻿namespace Bots.Models
+﻿namespace Model
 {
     public interface IWebhookMessage
     {
