@@ -11,6 +11,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using UltimateTemperatureLibrary;
+using Weather;
 
 
 namespace TeamsWebhook
@@ -19,14 +20,12 @@ namespace TeamsWebhook
     {
         static async Task<int> Main(string[] args)
         {
-            var serviceUrl = Environment.GetEnvironmentVariable("serviceUrl", EnvironmentVariableTarget.User) ?? string.Empty;
-
             // Create host so I can use services
             var builder = new HostBuilder()
                 .ConfigureServices((hostContext, services) =>
                 {
                     services.AddHttpClient();
-                    services.AddHttpClient("meta", c =>
+                    services.AddHttpClient("weather", c =>
                     {
                         c.BaseAddress = new Uri("https://www.metaweather.com/api/");
                     });
@@ -36,7 +35,7 @@ namespace TeamsWebhook
                     });
                     services.AddHttpClient("teams", c =>
                     {
-                        c.BaseAddress = new Uri(serviceUrl);
+                        c.BaseAddress = new Uri(Environment.GetEnvironmentVariable("serviceUrl", EnvironmentVariableTarget.User) ?? string.Empty);
                     });
                 })
                 .ConfigureLogging(logging =>
@@ -53,28 +52,23 @@ namespace TeamsWebhook
             {
                 var services = serviceScope.ServiceProvider;
                 var logger = services.GetRequiredService<ILogger<Program>>();
-
-                logger.LogError("Log error test");
-
                 var httpClientFactory = services.GetRequiredService<IHttpClientFactory>();
-                var client = httpClientFactory.CreateClient("meta");
-
-
-                var forecast = await client.GetFromJsonAsync<WeatherForecastModel>("location/2357024/");
-                var jsonResponse = JsonConvert.SerializeObject(forecast);
-
-                logger.LogInformation($"Weather response: {jsonResponse}");
-
+                
+                
+                var weatherClient = new WeatherClient(httpClientFactory);
                 var teamsWebhook = new Bots.Teams.TeamsWebhook(httpClientFactory);
+                var randomGeneratorClient = new RandomGenerator.Generator(httpClientFactory);
+                
+                var forecast = await weatherClient.GetWeatherForecastAsync(2357024);
 
-                var randomGenerator = await new RandomGenerator.Generator(httpClientFactory).GetRandomParagraph(3);
-
-                var sections = new List<Section>();
-                sections.Add(new Section
+                var sections = new List<Section>
                 {
-                    ActivityText = randomGenerator,
-                    ActivityImage = $"https://picsum.photos/200",
-                });
+                    new Section
+                    {
+                        ActivityText = await randomGeneratorClient.GetRandomParagraph(3),
+                        ActivityImage = $"https://picsum.photos/200",
+                    }
+                };
 
                 if (forecast.Consolidated_weather.Any())
                 {
@@ -90,7 +84,6 @@ namespace TeamsWebhook
                     }
                 }
                 
-
                 var content = new CardConnector
                 {
                     Title = "You have a new notification!",
@@ -114,8 +107,6 @@ namespace TeamsWebhook
                 logger.LogInformation($"Teams response: {teamsResponse}");
             }
 
-
-            Console.ReadLine();
             return 0;
         }
     }

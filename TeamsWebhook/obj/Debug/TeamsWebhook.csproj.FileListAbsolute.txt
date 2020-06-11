@@ -31,6 +31,7 @@ C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\bin\Debug\Microsoft.Extens
 C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\bin\Debug\Newtonsoft.Json.dll
 C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\bin\Debug\System.Buffers.dll
 C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\bin\Debug\System.Diagnostics.DiagnosticSource.dll
 C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\bin\Debug\System.Diagnostics.EventLog.dll
 C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\bin\Debug\System.Memory.dll
 C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\bin\Debug\System.Net.Http.Json.dll
@@ -41,6 +42,7 @@ C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\bin\Debug\System.Text.Enco
 C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\bin\Debug\System.Text.Json.dll
 C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\bin\Debug\System.Threading.Tasks.Extensions.dll
 C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\bin\Debug\System.ValueTuple.dll
+C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\bin\Debug\UltimateTemperatureLibrary.dll
 C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\bin\Debug\Bots.dll
 C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\bin\Debug\RandomGenerator.dll
 C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\bin\Debug\Bots.pdb
@@ -51,5 +53,5 @@ C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\obj\Debug\TeamsWebhook.csp
 C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\obj\Debug\TeamsWebhook.csproj.CopyComplete
 C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\obj\Debug\TeamsWebhook.exe
 C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\obj\Debug\TeamsWebhook.pdb
-C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\bin\Debug\System.Diagnostics.DiagnosticSource.dll
-C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\bin\Debug\UltimateTemperatureLibrary.dll
+C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\bin\Debug\Weather.dll
+C:\Users\bento\source\repos\TeamsWebhook\TeamsWebhook\bin\Debug\Weather.pdb

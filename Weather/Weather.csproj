@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E11C81DD-71A0-4AF7-9651-CE3B7EB56696}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>TeamsWebhook</RootNamespace>
-    <AssemblyName>TeamsWebhook</AssemblyName>
+    <ProjectGuid>{84B08D27-5956-4A65-AA3D-4E35D742BE05}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Weather</RootNamespace>
+    <AssemblyName>Weather</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -38,38 +36,21 @@
     <Reference Include="System.Net.Http" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="WeatherClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Bots\Bots.csproj">
       <Project>{79960578-AEFF-4CF1-9601-919253CC5F61}</Project>
       <Name>Bots</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RandomGenerator\RandomGenerator.csproj">
-      <Project>{7496fe85-fce2-4289-ac3c-bd6322286717}</Project>
-      <Name>RandomGenerator</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Weather\Weather.csproj">
-      <Project>{84b08d27-5956-4a65-aa3d-4e35d742be05}</Project>
-      <Name>Weather</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Hosting">
-      <Version>3.1.5</Version>
-    </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Http">
       <Version>3.1.5</Version>
     </PackageReference>
     <PackageReference Include="System.Net.Http.Json">
       <Version>3.2.1</Version>
-    </PackageReference>
-    <PackageReference Include="UltimateTemperatureLibrary">
-      <Version>1.2.0</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

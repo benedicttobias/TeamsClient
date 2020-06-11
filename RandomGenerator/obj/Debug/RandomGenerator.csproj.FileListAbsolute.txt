@@ -1,9 +1,5 @@
 C:\Users\bento\source\repos\TeamsWebhook\RandomGenerator\bin\Debug\RandomGenerator.dll
 C:\Users\bento\source\repos\TeamsWebhook\RandomGenerator\bin\Debug\RandomGenerator.pdb
-C:\Users\bento\source\repos\TeamsWebhook\RandomGenerator\obj\Debug\RandomGenerator.csproj.CoreCompileInputs.cache
-C:\Users\bento\source\repos\TeamsWebhook\RandomGenerator\obj\Debug\RandomGenerator.csproj.CopyComplete
-C:\Users\bento\source\repos\TeamsWebhook\RandomGenerator\obj\Debug\RandomGenerator.dll
-C:\Users\bento\source\repos\TeamsWebhook\RandomGenerator\obj\Debug\RandomGenerator.pdb
 C:\Users\bento\source\repos\TeamsWebhook\RandomGenerator\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\bento\source\repos\TeamsWebhook\RandomGenerator\bin\Debug\Microsoft.Extensions.Configuration.dll
 C:\Users\bento\source\repos\TeamsWebhook\RandomGenerator\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll
@@ -21,3 +17,7 @@ C:\Users\bento\source\repos\TeamsWebhook\RandomGenerator\bin\Debug\System.Memory
 C:\Users\bento\source\repos\TeamsWebhook\RandomGenerator\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\bento\source\repos\TeamsWebhook\RandomGenerator\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\bento\source\repos\TeamsWebhook\RandomGenerator\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\bento\source\repos\TeamsWebhook\RandomGenerator\obj\Debug\RandomGenerator.csproj.CoreCompileInputs.cache
+C:\Users\bento\source\repos\TeamsWebhook\RandomGenerator\obj\Debug\RandomGenerator.csproj.CopyComplete
+C:\Users\bento\source\repos\TeamsWebhook\RandomGenerator\obj\Debug\RandomGenerator.dll
+C:\Users\bento\source\repos\TeamsWebhook\RandomGenerator\obj\Debug\RandomGenerator.pdb
