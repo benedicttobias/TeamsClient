@@ -1,21 +1,40 @@
 ﻿using System.Net;
+using System.Net.Http;
+using System.Threading.Tasks;
 using Bots.Models;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace Bots.Teams
 {
     public class TeamsWebhook
     {
         private readonly string _serviceUrl;
+        private readonly HttpClient _httpClient;
+        private readonly DefaultContractResolver _defaultContractResolver;
 
-        public TeamsWebhook(string serviceUrl)
+        public TeamsWebhook(IHttpClientFactory httpClientFactory)
         {
-            _serviceUrl = serviceUrl;
+            _httpClient = httpClientFactory.CreateClient("teams");
+
+            _defaultContractResolver = new DefaultContractResolver
+            {
+                NamingStrategy = new CamelCaseNamingStrategy()
+            };
         }
 
-        public HttpStatusCode Send(IWebhookMessage message)
+        public async Task<HttpStatusCode> Send(IWebhookMessage message)
         {
-            var webHookClient = new WebHookClient(_serviceUrl, message.MediaType);
-            return webHookClient.Post(message);
+            var payloadJson = JsonConvert.SerializeObject(message, new JsonSerializerSettings
+            {
+                ContractResolver = _defaultContractResolver,
+                Formatting = Formatting.Indented
+            });
+            
+            _httpClient.DefaultRequestHeaders.Add("contentType", message.MediaType);
+            var response = await _httpClient.PostAsync("", new StringContent(payloadJson));
+
+            return response.StatusCode;
         }
     }
 }

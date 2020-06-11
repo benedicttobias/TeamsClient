@@ -53,6 +53,9 @@
     <Compile Include="Teams\WebHookClient.cs" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Http">
+      <Version>3.1.5</Version>
+    </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>12.0.3</Version>
     </PackageReference>

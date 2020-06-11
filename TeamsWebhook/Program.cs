@@ -18,6 +18,9 @@ namespace TeamsWebhook
     {
         static async Task<int> Main(string[] args)
         {
+            var serviceUrl = Environment.GetEnvironmentVariable("serviceUrl", EnvironmentVariableTarget.User) ?? string.Empty;
+
+            // Create host so I can use services
             var builder = new HostBuilder()
                 .ConfigureServices((hostContext, services) =>
                 {
@@ -30,6 +33,10 @@ namespace TeamsWebhook
                     {
                         c.BaseAddress = new Uri("https://loripsum.net/api/");
                     });
+                    services.AddHttpClient("teams", c =>
+                    {
+                        c.BaseAddress = new Uri(serviceUrl);
+                    });
                 })
                 .ConfigureLogging(logging =>
                 {
@@ -39,6 +46,8 @@ namespace TeamsWebhook
 
             var host = builder.Build();
 
+
+            // Begin of the service scope
             using (var serviceScope = host.Services.CreateScope())
             {
                 var services = serviceScope.ServiceProvider;
@@ -49,22 +58,13 @@ namespace TeamsWebhook
                 var httpClientFactory = services.GetRequiredService<IHttpClientFactory>();
                 var client = httpClientFactory.CreateClient("meta");
 
-                try
-                {
-                    var forecast = await client.GetFromJsonAsync<WeatherForecastModel>("location/2357024/");
-                    var jsonResponse = JsonConvert.SerializeObject(forecast);
 
-                    logger.LogInformation($"Response: {jsonResponse}");
-                }
-                catch (Exception e)
-                {
-                    logger.LogError(e, "Error on getting the API data.");
-                    throw;
-                }
+                var forecast = await client.GetFromJsonAsync<WeatherForecastModel>("location/2357024/");
+                var jsonResponse = JsonConvert.SerializeObject(forecast);
 
-                var serviceUrl = Environment.GetEnvironmentVariable("serviceUrl", EnvironmentVariableTarget.User);
+                logger.LogInformation($"Weather response: {jsonResponse}");
 
-                var teamsWebhook = new Bots.Teams.TeamsWebhook(serviceUrl);
+                var teamsWebhook = new Bots.Teams.TeamsWebhook(httpClientFactory);
 
                 var randomGenerator = await new RandomGenerator.Generator(httpClientFactory).GetRandomParagraph(3);
 
